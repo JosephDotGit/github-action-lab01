@@ -1,23 +1,15 @@
-name: CI
-
+name: Display-File
 on:
   pull_request:
-    branches:
-      - "dev/prod"
-
+    branches: ["dev/prod"]
 jobs:
-  ubuntu-latest:
+  display-file-ubuntu:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Display file contents
-        run: cat file.txt
-
-  windows-latest:
+      - uses: actions/checkout@v4
+      - run: cat README.md
+  display-file-windows:
     runs-on: windows-latest
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Display file contents
-        run: type file.txt
+      - uses: actions/checkout@v4
+      - run: type README.md
